@@ -6,14 +6,14 @@
     <style>
         h1{
             font-size: 40px;
-            font-family: Tahoma, sans-serif;
-
+            font-family: Calibri,monospace;
+            margin-bottom: 0;
         }
         label {
             font-size: 20px;
             font-family: "Times New Roman", Times, serif;
         }
-        select, input{
+        button, select, input{
             font-size: 18px;
             font-family: "Times New Roman", Times, serif;
         }
@@ -28,17 +28,18 @@
             font-family: Tahoma,serif;
             visibility: hidden;
             width: fit-content;
-            background-color: white;
-            color: #22608f;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
             text-align: center;
             font-size: 15px;
-            padding: 5px 10px;
+            padding: 2px 10px;
             border-style: solid;
-            border-radius: 6px;
-            border-color: #22608f;
+            border-radius: 5px;
+            border-color: black;
             position: absolute;
-            z-index: 1;
-            margin-left: 10px;
+            margin-left: -50px;
+            margin-top: 20px;
+
         }
         .tooltip:hover .tooltip-text{
             visibility: visible;
@@ -50,32 +51,32 @@
     <h1><u>Home Insurance Plan</u></h1>
 
     <div>
-    <form id="form">
+    <form id="form" action="">
         <table>
             <tr>
                 <!--Name-->
                 <td><label for="name">Name:<span class = "tooltip">*<span class="tooltip-text">Enter your name</span></span></label></td>
-                <td><input type="text" id="name"></td>
+                <td><input type="text" id="name" class="field" required></td>
             </tr>
             <tr>
                 <!--Email-->
-                <td><label for="email">Email:<span class = "tooltip">*</span> </label></td>
-                <td><input type="text" id="email"></td>
+                <td><label for="email">Email:<span class = "tooltip">*<span class="tooltip-text">Enter your email</span></span></label></td>
+                <td><input type="text" id="email" class="field" required></td>
             </tr>
             <tr>
                 <!--Q1-->
-                <td><label>Are you an Owner or Tenant?<span class = "tooltip">*</span></label></td>
+                <td><label>Are you an Owner or Tenant?<span class = "tooltip">*<span class="tooltip-text">Choose an option</span></span></label></td>
                 <td><input type="radio" name="ques1" id="owner" value="100"><label style="font-size: 18px" for="owner">Owner</label><br>
                 <input type="radio" name="ques1" id="tenant" value="50"><label style="font-size: 18px" for="tenant">Tenant</label></td>
             </tr>
             <tr>
                 <!--No of Bedrooms-->
-                <td><label for="bedrooms">No. of Bedrooms:<span class = "tooltip">*</span> </label></td>
-                <td><input type="text" id="bedrooms"></td>
+                <td><label for="bedrooms">No. of Bedrooms:<span class = "tooltip">*<span class="tooltip-text">Enter number of bedrooms</span></span></label></td>
+                <td><input type="text" id="bedrooms" class="field" required></td>
             </tr>
             <tr>
                 <!--Area-->
-                <td><label>Area:<span class = "tooltip">*</span> </label></td>
+                <td><label>Area:<span class = "tooltip">*<span class="tooltip-text">Choose an option</span></span></label></td>
                 <td><input type="radio" name="ques2" id="dublin" value="100">
                 <label style="font-size: 18px" for="dublin">Dublin</label><br>
                 <input type="radio" name="ques2" id="outskirt" value="50">
@@ -83,7 +84,7 @@
             </tr>
             <tr>
                 <!--Property Type-->
-                <td><label for="propType">Property Type:<span class = "tooltip">*</span> </label></td>
+                <td><label for="propType">Property Type:<span class = "tooltip">*<span class="tooltip-text">Select an option</span></span></label></td>
                 <td><select name="propType" id="propType">
                     <option value="" disabled selected hidden>Choose a property type</option>
                     <option value="75">Bungalow</option>
@@ -96,12 +97,12 @@
             </tr>
             <tr>
                 <!--Year built-->
-                <td><label for="year">Year built:<span class = "tooltip">*</span> </label></td>
-                <td><input type="text" id="year"></td>
+                <td><label for="year">Year built:<span class = "tooltip">*<span class="tooltip-text">Enter years built</span></span></label></td>
+                <td><input type="text" id="year" class="field" required></td>
             </tr>
             <tr>
                 <!--Cover Type-->
-                <td><label for="coverType">Cover Type:<span class = "tooltip">*</span> </label></td>
+                <td><label for="coverType">Cover Type:<span class = "tooltip">*<span class="tooltip-text">Select an option</span></span></label></td>
                 <td><select name="coverType" id="coverType">
                     <option value="" disabled selected hidden>Choose a cover type</option>
                     <option value="50">Owner Occupied</option>
@@ -111,7 +112,7 @@
             </tr>
             <tr>
                 <!--Contents cover-->
-                <td><label for="contents">Contents covered:<span class = "tooltip">*</span></label></td>
+                <td><label for="contents">Contents covered:<span class = "tooltip">*<span class="tooltip-text">Select an option</span></span></label></td>
                 <td><select name="contents" id="contents">
                     <option value="" disabled selected hidden>Choose contents cover</option>
                     <option value="10">€0 - €5,000</option>
@@ -123,7 +124,7 @@
             </tr>
             <tr>
                 <!--building cover-->
-                <td><label for="buildings">Buildings covered:<span class = "tooltip">*</span> </label></td>
+                <td><label for="buildings">Buildings covered:<span class = "tooltip">*<span class="tooltip-text">Select an option</span></span></label></td>
                 <td><select name="buildings" id="buildings">
                     <option value="" disabled selected hidden>Choose buildings cover</option>
                     <option value="20">€0 - €100,000</option>
@@ -135,8 +136,12 @@
             </tr>
             <tr>
                 <!--Years claim free-->
-                <td><label for="yearsClaim">Years Claims Free:<span class = "tooltip">*</span></label></td>
-                <td><input type="text" id="yearsClaim"></td>
+                <td><label for="yearsClaim">Claim-free years:<span class = "tooltip">*<span class="tooltip-text">Enter number of years</span></span></label></td>
+                <td><input type="text" id="yearsClaim" class="field" required></td>
+            </tr>
+            <tr>
+                <!--Calculate button-->
+                <td><button id="btnCalc">Calculate</button></td>
             </tr>
             <tr>
                 <!--Running total-->
