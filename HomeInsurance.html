@@ -22,7 +22,7 @@
             width: 350px;
         }
         .tooltip{
-            color: #ff2600;
+            color: #ff0000;
         }
         .tooltip-text{
             font-family: Tahoma,serif;
@@ -39,7 +39,6 @@
             position: absolute;
             margin-left: -50px;
             margin-top: 20px;
-
         }
         .tooltip:hover .tooltip-text{
             visibility: visible;
@@ -140,13 +139,13 @@
                 <td><input type="text" id="yearsClaim" class="field" required></td>
             </tr>
             <tr>
-                <!--Calculate button-->
-                <td><button id="btnCalc">Calculate</button></td>
+                <!--Running total-->
+                <td><label for="total">Running total:<span class = "tooltip">*<span class="tooltip-text">Show running total</span></span></label></td>
+                <td><input type="text" id="total" readonly></td>
             </tr>
             <tr>
-                <!--Running total-->
-                <td><label for="total">Running total: </label></td>
-                <td><input type="text" id="total" readonly></td>
+                <!--Calculate button-->
+                <td><button id="btnCalc">Calculate</button></td>
             </tr>
         </table>
     </form>
