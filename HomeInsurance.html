@@ -7,7 +7,10 @@
         h1{
             font-size: 40px;
             font-family: Calibri,monospace;
-            margin-bottom: 0;
+            margin: 10px 50px 5px;
+        }
+        div{
+            margin: 0 70px 0;
         }
         label {
             font-size: 20px;
@@ -43,12 +46,18 @@
         .tooltip:hover .tooltip-text{
             visibility: visible;
         }
+        p{
+            position: absolute;
+            left: 800px;
+            font-family: DialogInput,monospace;
+            font-size: 50px;
+        }
     </style>
     <script async src="Calculations.js"></script>
 </head>
 <body>
     <h1><u>Home Insurance Plan</u></h1>
-
+    <p id="countdown">4:00</p>
     <div>
     <form id="form" action="">
         <table>
