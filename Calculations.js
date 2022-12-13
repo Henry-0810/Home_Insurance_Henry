@@ -56,9 +56,16 @@ let btnCalc = document.getElementById("btnCalc");
 btnCalc.addEventListener('click',validation,false);
 
 //running total function
-let sumVal = function(){
+let runningTot = document.getElementById("total");
+let tot = [];
+runningTot.addEventListener('change',function(){
+    let Q1 = document.querySelector("[name='ques1']:checked");
+    if(Q1 != null){
+        tot[0] += parseInt(Q1.value);
+        console.log(tot[0]);
+    }
+})
 
-}
 
 
 
