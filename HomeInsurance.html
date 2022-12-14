@@ -91,6 +91,9 @@
             background: transparent;
             color: white;
         }
+        .btnCalc{
+            font-weight: bold;
+        }
     </style>
     <script async src="Calculations.js"></script>
 </head>
@@ -98,42 +101,42 @@
     <div class="div1" id="mainDiv">
         <h1><u>Home Insurance Plan</u></h1>
         <p id="countdown">You have 4:00 to finish the form</p>
-        <form id="form" name="inputForm" action="">
+        <form id="form" name="inputForm" action="Insurance%20Analysis.html" target="_blank">
             <table>
                 <tr>
                     <!--Pattern attribute referenced from here https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_input_pattern-->
                     <!--Name-->
                     <td><label for="name">Name:<span class = "tooltip">*<span class="tooltip-text">Enter your name</span></span></label></td>
-                    <td><input type="text" id="name" class="field" required></td>
+                    <td><input type="text" id="name" name="Name" class="field" required></td>
                 </tr>
                 <tr>
                     <!--Email-->
                     <td><label for="email">Email:<span class = "tooltip">*<span class="tooltip-text">Enter your email</span></span></label></td>
-                    <td><input type="text" id="email" class="field" required></td>
+                    <td><input type="text" id="email" name="Email" class="field" required></td>
                 </tr>
                 <tr>
-                    <!--Q1-->
+                    <!--Ownership-->
                     <td><label>Are you an Owner or Tenant?<span class = "tooltip">*<span class="tooltip-text">Choose an option</span></span></label></td>
-                    <td><input type="radio" name="ques1" id="owner" value="100" required><label style="font-size: 18px" for="owner">Owner</label><br>
-                    <input type="radio" name="ques1" id="tenant" value="50"><label style="font-size: 18px" for="tenant">Tenant</label></td>
+                    <td><input type="radio" name="Ownership" id="owner" value="100" required><label style="font-size: 18px" for="owner">Owner</label><br>
+                    <input type="radio" name="Ownership" id="tenant" value="50"><label style="font-size: 18px" for="tenant">Tenant</label></td>
                 </tr>
                 <tr>
                     <!--No of Bedrooms-->
                     <td><label for="bedrooms">No. of Bedrooms:<span class = "tooltip">*<span class="tooltip-text">Enter number of bedrooms</span></span></label></td>
-                    <td><input type="text" id="bedrooms" class="field" pattern="[0-9]*" oninvalid="setCustomValidity('Only numbers allowed')" required></td>
+                    <td><input type="text" id="bedrooms" class="field" name="Number Of Bedrooms" pattern="[0-9]*" oninvalid="setCustomValidity('Only numbers allowed')" required></td>
                 </tr>
                 <tr>
                     <!--Area-->
                     <td><label>Area:<span class = "tooltip">*<span class="tooltip-text">Choose an option</span></span></label></td>
-                    <td><input type="radio" name="ques2" id="dublin" value="100" required>
+                    <td><input type="radio" name="Location" id="dublin" value="100" required>
                     <label style="font-size: 18px" for="dublin">Dublin</label><br>
-                    <input type="radio" name="ques2" id="outskirt" value="50">
+                    <input type="radio" name="Location" id="outskirt" value="50">
                     <label style="font-size: 18px" for="outskirt">Outside Dublin</label></td>
                 </tr>
                 <tr>
                     <!--Property Type-->
                     <td><label for="propType">Property Type:<span class = "tooltip">*<span class="tooltip-text">Select an option</span></span></label></td>
-                    <td><select name="propType" id="propType" required>
+                    <td><select name="Property Type" id="propType" required>
                         <option value="" disabled selected hidden>Choose a property type</option>
                         <option value="75">Bungalow</option>
                         <option value="100">Country House</option>
@@ -146,12 +149,12 @@
                 <tr>
                     <!--Year built-->
                     <td><label for="year">Year(s) built:<span class = "tooltip">*<span class="tooltip-text">Enter years built</span></span></label></td>
-                    <td><input type="text" id="year" class="field" pattern="[0-9]*" oninvalid="setCustomValidity('Only numbers allowed')" required></td>
+                    <td><input type="text" id="year" class="field" name="Year(s) built" pattern="[0-9]*" oninvalid="setCustomValidity('Only numbers allowed')" required></td>
                 </tr>
                 <tr>
                     <!--Cover Type-->
                     <td><label for="coverType">Cover Type:<span class = "tooltip">*<span class="tooltip-text">Select an option</span></span></label></td>
-                    <td><select name="coverType" id="coverType" required>
+                    <td><select name="Cover Type" id="coverType" required>
                         <option value="" disabled selected hidden>Choose a cover type</option>
                         <option value="50">Owner Occupied</option>
                         <option value="60">Holiday</option>
@@ -161,7 +164,7 @@
                 <tr>
                     <!--Contents cover-->
                     <td><label for="contents">Contents covered:<span class = "tooltip">*<span class="tooltip-text">Select an option</span></span></label></td>
-                    <td><select name="contents" id="contents" required>
+                    <td><select name="Contents Cover" id="contents" required>
                         <option value="" disabled selected hidden>Choose contents cover</option>
                         <option value="10">€0 - €5,000</option>
                         <option value="20">€5,001 - €10,000</option>
@@ -173,7 +176,7 @@
                 <tr>
                     <!--building cover-->
                     <td><label for="buildings">Buildings covered:<span class = "tooltip">*<span class="tooltip-text">Select an option</span></span></label></td>
-                    <td><select name="buildings" id="buildings" required>
+                    <td><select name="Buildings Cover" id="buildings" required>
                         <option value="" disabled selected hidden>Choose buildings cover</option>
                         <option value="20">€0 - €100,000</option>
                         <option value="40">€100,001 - €200,000</option>
@@ -185,16 +188,16 @@
                 <tr>
                     <!--Years claim free-->
                     <td><label for="yearsClaim">Claim-free years:<span class = "tooltip">*<span class="tooltip-text">Enter number of years</span></span></label></td>
-                    <td><input type="text" id="yearsClaim" class="field" pattern="[0-9]*" oninvalid="setCustomValidity('Only numbers allowed')" required></td>
+                    <td><input type="text" id="yearsClaim" class="field" name="Claim-free year(s)" pattern="[0-9]*" oninvalid="setCustomValidity('Only numbers allowed')" required></td>
                 </tr>
                 <tr>
                     <!--Running total-->
                     <td><label for="total">Running total:<span class = "tooltip">*<span class="tooltip-text">Show running total</span></span></label></td>
-                    <td><input type="text" id="total" class = "runTot" value="€0" readonly></td>
+                    <td><input type="text" id="total" class = "runTot" name="Total" value="€0" readonly></td>
                 </tr>
                 <tr>
                     <!--Calculate button-->
-                    <td><button id="btnCalc"><b>Calculate</b></button></td>
+                    <td><input type="submit" class="btnCalc" id="btnCalc" value="Calculate"></td>
                 </tr>
             </table>
         </form>

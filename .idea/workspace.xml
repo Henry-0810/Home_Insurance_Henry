@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf6342e4-4500-40e4-acc4-6ebb484891e4" name="Changes" comment="i hate event listeners">
+    <list default="true" id="bf6342e4-4500-40e4-acc4-6ebb484891e4" name="Changes" comment="left validation and form action">
+      <change afterPath="$PROJECT_DIR$/Insurance Analysis.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Insurance Analysis.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Calculations.js" beforeDir="false" afterPath="$PROJECT_DIR$/Calculations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HomeInsurance.html" beforeDir="false" afterPath="$PROJECT_DIR$/HomeInsurance.html" afterDir="false" />
@@ -70,7 +72,7 @@
       <workItem from="1670936879322" duration="10569000" />
       <workItem from="1670965239484" duration="8928000" />
       <workItem from="1670981127397" duration="3646000" />
-      <workItem from="1671021381648" duration="17963000" />
+      <workItem from="1671021381648" duration="27223000" />
     </task>
     <task id="LOCAL-00001" summary="done">
       <created>1669895160554</created>
@@ -128,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670957010400</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="left validation and form action">
+      <created>1671043404513</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1671043404513</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +157,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="done" />
     <MESSAGE value="i hate event listeners" />
-    <option name="LAST_COMMIT_MESSAGE" value="i hate event listeners" />
+    <MESSAGE value="left validation and form action" />
+    <option name="LAST_COMMIT_MESSAGE" value="left validation and form action" />
   </component>
 </project>
