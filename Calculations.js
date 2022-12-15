@@ -12,6 +12,7 @@ function updateCount(){
     if(time <= 0){
         clearInterval(run);
         document.getElementById("mainDiv").style.visibility = "hidden";
+        document.getElementById("imgInsurance").style.visibility = "hidden";
         document.getElementById("sessionExpiredID").style.visibility = "visible";
     }
 
@@ -29,22 +30,36 @@ for(const input of inputs){
 //validation
 let email = document.querySelector("#email");
 const emailFormat = /(?:[a-z\d!#$%&'+=?^_`{|}~-]+(?:\.[a-z\d!#$%&'+=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z\d](?:[a-z\d-][a-z\d])?.)+[a-z\d](?:[a-z\d-][a-z\d])?|\[(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?).){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?|[a-z\d-]*[a-z\d]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\[\x01-\x09\x0b\x0c\x0e-\x7f])+)])/;
-let validate = function(){
-    if(!email.value.match(emailFormat)){
-        alert("Invalid Email address!");
-        email.style.color = "red";
-        return false;
+let validate = function() {
+    if (email.value !== null) {
+        if (!email.value.match(emailFormat)) {
+            email.style.color = "red";
+            return false;
+        }
     }
-    else if(document.getElementById("name").value == null){
-        return false;
+    for(let elements of inputs){
+        if(elements.id === "bedrooms"||elements.id==="year" || elements.id === "yearsClaim"){
+            if(isNaN(elements.value)){
+                elements.style.color = "red";
+                return false;
+            }
+        }
     }
-return true;
+    return true;
 }
 
 let form = document.getElementById("form");
 email.addEventListener('focusin',function(){
     this.style.color = "black";
 });
+
+for(let elements of inputs){
+    if(elements.id === "bedrooms"||elements.id==="year" || elements.id === "yearsClaim"){
+        elements.addEventListener('focusin',function(){
+            this.style.color = "black";
+        });
+    }
+}
 
 let validation = false;
 let calculation = function(e){
@@ -56,10 +71,10 @@ let calculation = function(e){
     }
 }
 
-let btnCalc = document.getElementById("btnCalc");
-btnCalc.addEventListener('click',calculation,false);
+form.addEventListener('submit',calculation,false);
 
 //running total
+let total = 0;
 let runTot = document.getElementById("total");
 let rad1 = document.querySelectorAll("input[name = 'Ownership']"),
     x = rad1.length, t = 0;
@@ -68,6 +83,7 @@ let rad2 = document.querySelectorAll("input[name = 'Location']"),
 let txtBoxesVal = document.querySelectorAll('input'),input1 = 0, input2 = 0, input3 = 0;
 let selectBoxesVal = document.querySelectorAll('select'), option1 = 0, option2 = 0, option3 = 0, option4 = 0;
 let allRadValues = 0, txtBoxValues = 0, listBoxValues = 0;
+
 
 while(x--) {
     rad1[x].addEventListener('change', function () {
